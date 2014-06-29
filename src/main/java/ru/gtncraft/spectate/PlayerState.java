@@ -1,7 +1,4 @@
-package com.Chipmunk9998.Spectate;
-
-import java.util.ArrayList;
-import java.util.Collection;
+package ru.gtncraft.spectate;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -10,27 +7,24 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-public class PlayerState {
+import java.util.ArrayList;
+import java.util.Collection;
+
+public final class PlayerState {
 
 	public Player player;
-	public ItemStack[] inventory;
-	public ItemStack[] armor;
-	public int hunger;
-	public double health;
-	public int level;
-	public float exp;
-	public int slot;
-	public boolean allowFlight;
-	public boolean isFlying;
-	public GameMode mode;
-	public Location location;
+    public ItemStack[] inventory, armor;
+    public int hunger, slot, level;
+    public double health;
+    public float exp;
+    public boolean allowFlight, isFlying;
+    public GameMode mode;
+    public Location location;
 	
 	public Collection<PotionEffect> potions;
-
-	public ArrayList<Player> vanishedFrom = new ArrayList<Player>();
+	public Collection<Player> vanishedFrom = new ArrayList<>();
 
 	public PlayerState(Player p) {
-
 		player = p;
 		inventory = p.getInventory().getContents();
 		armor = p.getInventory().getArmorContents();
@@ -47,19 +41,11 @@ public class PlayerState {
 		potions = p.getActivePotionEffects();
 
 		for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-
 			if (players != p) {
-
 				if (!players.canSee(p)) {
-
 					vanishedFrom.add(players);
-
 				}
-
 			}
-
 		}
-
 	}
-
 }

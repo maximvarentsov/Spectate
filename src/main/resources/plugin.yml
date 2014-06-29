@@ -1,9 +1,16 @@
-name: Spectate
-main: com.Chipmunk9998.Spectate.Spectate
-version: 2.2
+name: ${artifactId}
+main: ${groupId}.${artifactId}
+version: ${version}
+
 commands:
     spectate:
-        description: Lets you spectate another user
-        aliases: [spec]
-    control:
-        description: Lets you control another user
+        description: Lets you spectate another user.
+        aliases: [ spec ]
+        usage: |
+             /<command> <playername> - Puts you into spectate mode and lets you see what the target sees.
+             /<command> off - Takes you out of spectate mode.
+             /<command> mode - Switch between scroll and single spectate mode.
+             /<command> angle firstperson - Set first person view mode.
+             /<command> angle thirdperson - Set fird person view mode.
+             /<command> angle thirdpersonfront - Set third person front view mode.
+             /<command> angle freeroam - Set free roam view mode.

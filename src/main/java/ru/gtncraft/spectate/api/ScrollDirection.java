@@ -1,7 +1,5 @@
-package com.Chipmunk9998.Spectate.api;
+package ru.gtncraft.spectate.api;
 
 public enum ScrollDirection {
-	
 	LEFT, RIGHT
-
 }
